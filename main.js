@@ -2,7 +2,7 @@
 
 //メール取り出し
 const now = Math.floor(new Date().getTime() / 1000)
-const start = now - 60 * 60 * 24 // 24時間前から
+const start = now - 60 * 60 * 1 // 1時間前から
 const threads = GmailApp.search(`after:${start}`)
 
 //メールの内容を取り出し
