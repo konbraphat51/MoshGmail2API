@@ -97,3 +97,8 @@ emailsContent.forEach((emailContent) => {
 		emailsContentNew.push(emailContent)
 	}
 })
+
+//新規データ分についてAPI叩く
+emailsContentNew.forEach((emailContent) => {
+	//WTF you want to do
+})
