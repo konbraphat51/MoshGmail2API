@@ -102,3 +102,8 @@ emailsContent.forEach((emailContent) => {
 emailsContentNew.forEach((emailContent) => {
 	//WTF you want to do
 })
+
+//ログシートに追加
+emailsContentNew.forEach((emailContent) => {
+	logSheet.appendRow([emailContent.emailAddr, emailContent.date])
+})
