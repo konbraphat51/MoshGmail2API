@@ -6,6 +6,14 @@ const moshEmail = "hello@themosh.jp"
 const registredTitle = "サービスへのお申し込みがありました"
 //<<
 
+//ログとなるスプレッドシート
+const logSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("ログ")
+const logSheetLastRow = logSheet
+	.getRange("A:A")
+	.getValues()
+	.filter(String).length
+const logSheetData = logSheet.getRange(1, 1, logSheetLastRow, 2).getValues()
+
 //メール取り出し
 const now = Math.floor(new Date().getTime() / 1000)
 const start = now - 60 * 60 * 2 // 2時間前から
