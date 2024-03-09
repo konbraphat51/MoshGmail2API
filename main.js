@@ -37,3 +37,33 @@ threads.forEach((thread) => {
 		emails.push(email)
 	})
 })
+
+//>>申し込みメール読み込み
+//アンケートから対象の情報を取り出す関数
+function GetAnswer(lines, query) {
+	const line = lines.find((line) => line.indexOf(query) !== -1)
+	if (!line) {
+		throw new Error(`"${query}"が見つかりません`)
+	}
+
+	//最初の": "以降を取り出す
+	let splited = line.split(": ")
+	splited.splice(0, 1) //第1項削除
+	return splited.join(": ") //残りを結合
+}
+
+var emailsContent = []
+emails.forEach((email) => {
+	//行区切り
+	const lines = email.body.split("\n")
+
+	const emailAddr = GetAnswer(lines, "登録メールアドレス")
+
+	const emailContent = {
+		emailAddr: emailAddr,
+		date: email.date,
+	}
+
+	emailsContent.push(emailContent)
+})
+//<<
