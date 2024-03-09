@@ -75,3 +75,25 @@ emails.forEach((email) => {
 	emailsContent.push(emailContent)
 })
 //<<
+
+//スプレッドシート照会し重複回避
+var emailsContentNew = []
+emailsContent.forEach((emailContent) => {
+	//ログシートに同一のデータがないか確認
+	let isExist = false
+	for (let cnt = 0; cnt < logSheetLastRow; cnt++) {
+		if (
+			logSheetData[cnt][0] === emailContent.emailAddr &&
+			logSheetData[cnt][1] === emailContent.date
+		) {
+			//発見
+			isExist = true
+			break
+		}
+	}
+
+	if (!isExist) {
+		//新規
+		emailsContentNew.push(emailContent)
+	}
+})
