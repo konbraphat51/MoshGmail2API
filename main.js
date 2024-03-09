@@ -8,7 +8,7 @@ const registredTitle = "サービスへのお申し込みがありました"
 
 //メール取り出し
 const now = Math.floor(new Date().getTime() / 1000)
-const start = now - 60 * 60 * 1 // 1時間前から
+const start = now - 60 * 60 * 2 // 2時間前から
 const threads = GmailApp.search(`after:${start}`)
 
 //Moshのサービス申し込みメールのみ抽出
