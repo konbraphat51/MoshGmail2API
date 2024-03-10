@@ -2,6 +2,8 @@
 
 function MyFunction() {
 	//>>定数類
+	const serviceName = "テスト" //Moshで公開しているサービス名
+
 	//Mosh側仕様変更に注意
 	const moshEmail = "hello@themosh.jp"
 	const registredTitle = "サービスへのお申し込みがありました"
