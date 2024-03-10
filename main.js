@@ -66,7 +66,17 @@ function MyFunction() {
 		//行区切り
 		const lines = email.body.split("\n")
 
-		const emailAddr = GetAnswer(lines, "登録メールアドレス")
+		//メールから取得される情報を抜き出す
+		/*
+		現状（2024/3/10)だと
+		* メールアドレス
+		* 申込者（Moshユーザー名）
+		* 性別
+		* 電話番号
+		* MOSH ID
+		のみ取得できる
+		*/
+		const emailAddr = GetAnswer(lines, "メールアドレス")
 
 		const emailContent = {
 			emailAddr: emailAddr,
