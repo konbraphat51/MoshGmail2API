@@ -7,6 +7,7 @@ function MyFunction() {
 	//Mosh側仕様変更に注意
 	const moshEmail = "hello@themosh.jp"
 	const registredTitle = "サービスへのお申し込みがありました"
+	const serviceReporting = new RegExp("/^.*さんから「" + serviceName +"」にお申し込みがありました。$")
 	//<<
 
 	//ログとなるスプレッドシート
