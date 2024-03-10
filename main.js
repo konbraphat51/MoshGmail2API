@@ -8,7 +8,7 @@ function MyFunction() {
 	//<<
 
 	//ログとなるスプレッドシート
-	const logSheet = SpreadsheetApp.getActiveSpreadsheet()
+	const logSheet = SpreadsheetApp.getActiveSheet()
 	const logSheetLastRow = logSheet
 		.getRange("A:A")
 		.getValues()
