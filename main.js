@@ -7,7 +7,9 @@ function MyFunction() {
 	//Mosh側仕様変更に注意
 	const moshEmail = "hello@themosh.jp"
 	const registredTitle = "サービスへのお申し込みがありました"
-	const serviceReporting = new RegExp("/^.*さんから「" + serviceName +"」にお申し込みがありました。$")
+	const serviceReporting = new RegExp(
+		"/^.*さんから「" + serviceName + "」にお申し込みがありました。$",
+	)
 	//<<
 
 	//ログとなるスプレッドシート
@@ -42,6 +44,12 @@ function MyFunction() {
 
 			//申し込みメールでないなら...
 			if (email.subject.indexOf(registredTitle) === -1) {
+				//...スキップ
+				return
+			}
+
+			//対象のサービスでないなら...
+			if (!serviceReporting.test(email.body)) {
 				//...スキップ
 				return
 			}
