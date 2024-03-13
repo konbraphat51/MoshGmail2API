@@ -8,7 +8,8 @@ function MyFunction() {
 	const moshEmail = "hello@themosh.jp"
 	const registredTitle = "サービスへのお申し込みがありました"
 	const serviceReporting = new RegExp(
-		"/^.*さんから「" + serviceName + "」にお申し込みがありました。$",
+		"^.*さんから「" + serviceName + "」にお申し込みがありました。$",
+		"gm",
 	)
 	//<<
 
